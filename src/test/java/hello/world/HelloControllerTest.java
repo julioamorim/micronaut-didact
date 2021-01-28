@@ -25,4 +25,12 @@ public class HelloControllerTest {
         assertEquals(response,"Hellor World!");
     }
 
+    @Inject
+    HelloWorld clientTwo;
+
+    @Test
+    public void testHelloWorldResponse(){
+        assertEquals("Hello World", clientTwo.hello().blockingGet());
+    }
+
 }
